@@ -1,4 +1,4 @@
-# 🪺 Nest — Inventory & Order Fulfillment System
+# Nest — Inventory & Order Fulfillment System
 
 A lightweight OOP-based inventory manager that handles product catalogs, order fulfillment, and a backlog queue for out-of-stock items.
 
@@ -24,7 +24,7 @@ nest = Nest(product_info=[
 
 ## Core Features
 
-### 📦 Inventory Management
+### Inventory Management
 
 Products are initialized via `init_catalog()`, which converts mass from grams to kg and sets stock to 0.
 
@@ -41,7 +41,7 @@ After restocking, it automatically retries any orders sitting in the backlog.
 
 ---
 
-### 🛒 Order Processing
+### Order Processing
 
 Call `process_order()` with an order dict:
 
@@ -61,7 +61,7 @@ Internally, it does two things:
 
 ---
 
-### 📬 Backlog Logic
+### Backlog Logic
 
 If an order can't be fully fulfilled (out of stock), the remaining items get added to `self.backlog`. The next time `process_restock()` is called, those backlogged orders are retried automatically.
 
@@ -75,7 +75,7 @@ Order comes in → try to fulfill → partially fulfilled?
 
 ---
 
-### ⚖️ Packing Logic
+### Packing Logic
 
 Packages have a **1.8 kg weight limit**. The packer loops through items in an order and fills each package greedily until the limit is hit or stock runs out. Then it ships and starts a new package if there's still more to send.
 
